@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Savinu Guruge</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0E13; --surface:#1A1F28; --text:#E8E6E0; --muted:#8B93A1; --accent:#C98A4B; --line:#242B36;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.6;
+}
+.wrap{max-width:700px; margin:0 auto; padding:5rem 1.5rem 6rem;}
+h1,h2{font-family:'Fraunces',serif; font-weight:600; margin:0;}
+h1{font-size:2.4rem; line-height:1.15;}
+.role{font-family:'JetBrains Mono',monospace; color:var(--accent); font-size:0.9rem; margin-top:0.9rem;}
+.intro{color:var(--muted); margin-top:1.3rem; max-width:52ch; font-size:1.02rem;}
+.links{margin-top:1.6rem; display:flex; gap:1.3rem; flex-wrap:wrap;}
+.links a{color:var(--text); text-decoration:none; font-size:0.92rem; border-bottom:1px solid var(--line); padding-bottom:2px;}
+.links a:hover{border-color:var(--accent); color:var(--accent);}
+section{margin-top:4rem;}
+.section-label{font-family:'JetBrains Mono',monospace; color:var(--muted); font-size:0.82rem; margin-bottom:1.6rem;}
+.project{padding:1.8rem 0; border-top:1px solid var(--line);}
+.project:last-child{border-bottom:1px solid var(--line);}
+.project h2{font-size:1.25rem;}
+.project .meta{font-family:'JetBrains Mono',monospace; color:var(--muted); font-size:0.78rem; margin-top:0.3rem;}
+.project p{color:var(--muted); margin:0.8rem 0 0; max-width:56ch; font-size:0.96rem;}
+.tags{display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.9rem;}
+.tags span{font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--accent); background:var(--surface); padding:0.25rem 0.6rem; border-radius:3px;}
+.project a.view{display:inline-block; margin-top:1rem; font-size:0.88rem; color:var(--text); text-decoration:none; border-bottom:1px solid var(--accent);}
+.group-note{color:var(--muted); font-size:0.78rem; font-style:italic; margin-top:0.6rem;}
+footer{margin-top:5rem; color:var(--muted); font-size:0.85rem; border-top:1px solid var(--line); padding-top:1.6rem;}
+@media(max-width:480px){.wrap{padding:3.5rem 1.2rem 4rem;} h1{font-size:1.9rem;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Savinu Guruge</h1>
+  <div class="role">cybersecurity student &middot; building things, then breaking them</div>
+  <p class="intro">Level 5 Cybersecurity student exploring offensive security, web development, and everything in between. I build small, real projects to understand how systems break, and how to fix them.</p>
+  <div class="links">
+    <a href="https://github.com/SavinuGuru" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/savinu-guruge-b5b61133b/" target="_blank">LinkedIn</a>
+  </div>
+
+  <section>
+    <div class="section-label">// projects</div>
+
+    <div class="project">
+      <h2>Cybersecurity CTF Box</h2>
+      <div class="meta">Individual &middot; Level 5</div>
+      <p>Designed and built a self-hosted Capture-The-Flag environment on an isolated Ubuntu Server VM, covering five categories: session hijacking, binary exploitation, cryptography, steganography, and container security. Wrote and solved 10 full exploit chains end to end, including stealing a session cookie via reflected XSS, building a working ROP chain to bypass NX protection, cracking an MD5 hash with Hashcat, recovering a hidden message from LSB image steganography, and escaping a privileged Docker container to read the host filesystem. Backed every challenge with two peer-reviewed research papers on the underlying technique, then wrote a full risk assessment, threat scenario, and incident-response plan for each vulnerability class. Academic write-up kept private; happy to walk through the methodology live.</p>
+      <div class="tags"><span>Python</span><span>C / GDB</span><span>Docker</span><span>Hashcat</span><span>Linux</span></div>
+    </div>
+
+    <div class="project">
+      <h2>OSINT Reconnaissance Report</h2>
+      <div class="meta">Group project &middot; Level 4</div>
+      <p>Ran a full passive reconnaissance assessment on a live e-commerce platform, mapped to the NIST Cybersecurity Framework. Covered WHOIS, DNS, SSL/TLS configuration, tech stack fingerprinting, and social media exposure, then built a quantitative risk model (FAIR methodology) with cost-justified mitigation recommendations.</p>
+      <div class="tags"><span>WHOIS</span><span>DNS</span><span>SSL Labs</span><span>NIST CSF</span></div>
+      <div class="group-note">Team of 4 &middot; focus on infrastructure and DNS analysis</div>
+    </div>
+
+    <div class="project">
+      <h2>Nestle Insight &mdash; Territory & Demand Platform</h2>
+      <div class="meta">Group project &middot; Level 5 &middot; 3 sprints</div>
+      <p>A full-stack platform (web, mobile, backend) built across three agile sprints for a territory and demand-signal system connecting shop owners, sales reps, warehouse managers, and distributors. Held three different roles across the project: Business Analyst in Sprint 1 (use case, activity, and sequence diagrams for the full system), Scrum Master in Sprint 2 (managed the Jira board, sprint documentation, and team alignment), and QA in Sprint 3 (built a full automated testing environment with Playwright, achieving a 100% pass rate across Chromium, Firefox, and WebKit, plus manual test case documentation).</p>
+      <div class="tags"><span>NestJS</span><span>React</span><span>Flutter</span><span>PostgreSQL</span><span>Playwright</span></div>
+      <a class="view" href="https://github.com/chanupadulnuwan/NestleInsight-AdminWeb" target="_blank">Admin Web &rarr;</a> &nbsp;
+      <a class="view" href="https://github.com/chanupadulnuwan/NestleInsight-backend" target="_blank">Backend &rarr;</a> &nbsp;
+      <a class="view" href="https://github.com/chanupadulnuwan/NestleInsight-mobile" target="_blank">Mobile &rarr;</a>
+      <div class="group-note">Team of 4 &middot; repos hosted under teammate's GitHub account</div>
+    </div>
+
+    <div class="project">
+      <h2>SQL Injection: Exploit & Patch</h2>
+      <div class="meta">Personal project</div>
+      <p>Built a login app, exploited it myself with a classic SQL injection payload to bypass authentication entirely, then patched it using parameterized queries. A hands-on look at the #1 vulnerability on the OWASP Top 10, from both sides.</p>
+      <div class="tags"><span>Python</span><span>Flask</span><span>SQLite</span></div>
+      <a class="view" href="https://github.com/SavinuGuru/vulnerable-login-sqli-demo" target="_blank">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="project">
+      <h2>Password Strength &amp; Breach Checker</h2>
+      <div class="meta">Personal project</div>
+      <p>A CLI tool that scores password strength and checks it against the Have I Been Pwned database using k-anonymity, so the real password never leaves the machine. Flagged a test password with 9.6 million known breach appearances.</p>
+      <div class="tags"><span>Python</span><span>HIBP API</span><span>SHA-1</span></div>
+      <a class="view" href="https://github.com/SavinuGuru/password-strength-breach-checker" target="_blank">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="project">
+      <h2>Gamer.Inc &mdash; Gaming Storefront</h2>
+      <div class="meta">Individual &middot; Level 4</div>
+      <p>Designed and built a full gaming e-commerce site from wireframe to working pages: home, about, consoles, peripherals, and FAQ. Validated every page with the W3C HTML/CSS checkers and tested performance with Lighthouse, scoring in the high 80s to 90s across most pages.</p>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>Wireframing</span></div>
+      <a class="view" href="https://github.com/SavinuGuru/gamers-inc-site" target="_blank">View on GitHub &rarr;</a>
+    </div>
+
+  </section>
+
+  <footer>Built while hunting for an internship. More projects added as I build them.</footer>
+</div>
+</body>
+</html>
